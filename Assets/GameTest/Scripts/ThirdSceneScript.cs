@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Doublsb.Dialog;
 
 public class ThirdSceneScript : MonoBehaviour
 {
     public DialogManager DialogManager;
+    [SerializeField] private GameObject _panel;
 
     private void Awake()
     {
@@ -27,5 +30,9 @@ public class ThirdSceneScript : MonoBehaviour
 
         
         DialogManager.Show(dialogTexts);
+        EndGame();//Finish the game
+    }
+    public void EndGame(){
+        _panel.SetActive(true);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Doublsb.Dialog;
 
 public class FirstSceneScript : MonoBehaviour
@@ -10,35 +11,36 @@ public class FirstSceneScript : MonoBehaviour
     private void Awake()
     {
         var dialogTexts = new List<DialogData>();
-
-        dialogTexts.Add(new DialogData("/size:up/Hi, /size:init/my name is Li.", "Li"));
-
-        dialogTexts.Add(new DialogData("Let's start this test!", "Li"));
-
-        dialogTexts.Add(new DialogData("The idea is to create something very simple, make me react to the text and animate me in a few different ways.", "Li"));
-
-        dialogTexts.Add(new DialogData("Remember that you can change my sprite or background if you choose so, you can even go 3D if you're more experienced with that!", "Li"));
-
-        dialogTexts.Add(new DialogData("Anyways... Let's move on!", "Li"));
-
-        dialogTexts.Add(new DialogData("Create a branching option where you have to choose between 3 possible answers to give me.", "Li"));
-
-        dialogTexts.Add(new DialogData("Once you create the options and pick one of them I'll say: ", "Li"));
-
-        dialogTexts.Add(new DialogData("Yo choose option A!", "Li"));
-
-        dialogTexts.Add(new DialogData("Or...", "Li"));
-
-        dialogTexts.Add(new DialogData("Yo choose option B!", "Li"));
-
-        dialogTexts.Add(new DialogData("Or...", "Li"));
-
-        dialogTexts.Add(new DialogData("Yo choose option C!", "Li"));
-
-        dialogTexts.Add(new DialogData("After this, you'll send me to the SecondScene!", "Li"));
-
-        dialogTexts.Add(new DialogData("Where you'll have to create a VERY simple mini game and make me react to it.", "Li"));
+        //Narrador
+        dialogTexts.Add(new DialogData("/emote:Normal/Nathan is standing outside his house, checking her phone, when he notices Samuel, a new neighbor, carrying some boxes.", "Narrador"));
+        //both talks
+        dialogTexts.Add(new DialogData("/emote:Happy/Hi, /size:init/my name is Nathan.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Happy/Hi, /size:init/my name is Samuel.", "Samuel"));
+        
+        //both talks
+        dialogTexts.Add(new DialogData("/emote:Happy/ Hey! Just moved in?", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Happy/ Yeah! I got here a couple of days ago. Still trying to settle in.", "Samuel"));
+        
+        //both talks
+        dialogTexts.Add(new DialogData("/emote:Normal/Welcome to the neighborhood! I live next door", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Normal/Nice to meet you! I don’t really know my way around here yet.", "Samuel"));
+        
+        //both talks
+        dialogTexts.Add(new DialogData("/emote:Normal/Don’t worry, it’s a nice place, and people are really friendly. If you need anything, just let me know.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Happy/Thanks! It already feels like a great place to live.", "Samuel"));
+        
+        //Nathan talks
+        dialogTexts.Add(new DialogData("/emote:Happy/I was just about to make some coffee and snacks. Want to join me? I can tell you more about the neighborhood.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Sorprise/That sounds great! Maybe you can give me some tips so I don’t get lost.", "Samuel"));
+        //Narrador
+        dialogTexts.Add(new DialogData("/emote:Normal/They both laugh and head into Nathan's house.", "Narrador"));
+        
+        //Hacer cuestionario de 3 opciones: que prefieres de tomar? Lo tomas con azucar. Si. Uy donde deje el azucar. 
+        ///Cambia de escena para jugar al juego de encoontrar el azucar, la taza y una cuchara.
+        
 
         DialogManager.Show(dialogTexts);
+        // SecondScene();
     }
+    private void SecondScene() => SceneManager.LoadScene("SecondScene");
 }
