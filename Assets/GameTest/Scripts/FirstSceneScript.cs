@@ -34,13 +34,9 @@ public class FirstSceneScript : MonoBehaviour
         dialogTexts.Add(new DialogData("/emote:Sorprise/That sounds great! Maybe you can give me some tips so I don’t get lost.", "Samuel"));
         //Narrador
         dialogTexts.Add(new DialogData("/emote:Normal/They both laugh and head into Nathan's house.", "Narrador"));
-        
-        //Hacer cuestionario de 3 opciones: que prefieres de tomar? Lo tomas con azucar. Si. Uy donde deje el azucar. 
-        ///Cambia de escena para jugar al juego de encoontrar el azucar, la taza y una cuchara.
-        
 
         DialogManager.Show(dialogTexts);
-        // SecondScene();
+        SecondScene();
     }
     private void SecondScene() => SceneManager.LoadScene("SecondScene");
 }
