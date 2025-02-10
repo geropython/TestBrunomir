@@ -435,8 +435,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogManager: {fileID: 1614500824}
-  _inside: {fileID: 668131674}
   _outSide: {fileID: 1422283741}
+  _livingRoom: {fileID: 668131674}
 --- !u!1 &668131674
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 668131677}
   - component: {fileID: 668131676}
   m_Layer: 5
-  m_Name: Inside
+  m_Name: Livingroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1137,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
@@ -1148,17 +1148,17 @@ PrefabInstance:
         type: 3}
       propertyPath: CallSE.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 7796b54b22f7f02439fc159ff0ec2b7c, type: 3}
+      objectReference: {fileID: 8300000, guid: 3778d96c05b8ef24fb11a87e8ca7d186, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 3778d96c05b8ef24fb11a87e8ca7d186, type: 3}
+      objectReference: {fileID: 8300000, guid: e063efec69410264baf7707a3f1a53d8, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: e063efec69410264baf7707a3f1a53d8, type: 3}
+      objectReference: {fileID: 8300000, guid: 62410e201f8e72840be02e9bc2539d97, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: ChatSE.Array.data[0]
@@ -1850,16 +1850,41 @@ PrefabInstance:
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: ChatSE.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 7796b54b22f7f02439fc159ff0ec2b7c, type: 3}
+      objectReference: {fileID: 8300000, guid: 374e36f9f749e1044aa23fd436946bb3, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3778d96c05b8ef24fb11a87e8ca7d186, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e063efec69410264baf7707a3f1a53d8, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62410e201f8e72840be02e9bc2539d97, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: ChatSE.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d892de2cb9eb07941bef7f5f4245c1b3, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: ChatSE.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: d892de2cb9eb07941bef7f5f4245c1b3, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,

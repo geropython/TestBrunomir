@@ -1213,13 +1213,33 @@ PrefabInstance:
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 7796b54b22f7f02439fc159ff0ec2b7c, type: 3}
+      objectReference: {fileID: 8300000, guid: 374e36f9f749e1044aa23fd436946bb3, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62410e201f8e72840be02e9bc2539d97, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3778d96c05b8ef24fb11a87e8ca7d186, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: e063efec69410264baf7707a3f1a53d8, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e543b97812f86042a5a14371f02bd68, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: ChatSE.Array.data[0]
@@ -1911,13 +1931,33 @@ PrefabInstance:
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: CallSE.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 7796b54b22f7f02439fc159ff0ec2b7c, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3778d96c05b8ef24fb11a87e8ca7d186, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62410e201f8e72840be02e9bc2539d97, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: e063efec69410264baf7707a3f1a53d8, type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1130f5176322a7349ad819de06dc2dbf, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: ChatSE.Array.data[0]
@@ -1977,6 +2017,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
+      propertyPath: Emotion._sprite.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: a1fd8c48643107c409a8a86295520a6e,
+        type: 3}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
       propertyPath: Emotion._emotion.Array.data[1]
       value: Sad
       objectReference: {fileID: 0}
@@ -2004,6 +2050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Emotion._emotion.Array.data[6]
       value: Confused
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: Emotion._emotion.Array.data[7]
+      value: Hungry
       objectReference: {fileID: 0}
     - target: {fileID: 8206358605457009709, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
@@ -3142,6 +3193,11 @@ PrefabInstance:
       propertyPath: CallSE.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
+        type: 3}
+      propertyPath: CallSE.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34a5c5599ac8db4469ed6b5fc2fef138, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655,
         type: 3}
       propertyPath: ChatSE.Array.data[0]

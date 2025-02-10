@@ -21,26 +21,26 @@ public class FirstSceneScript : MonoBehaviour
         AddDialog(dialogTexts, "/emote:Normal/Nathan is standing outside his house, checking her phone, when he notices Samuel, a new neighbor, carrying some boxes.", "Narrador");
 
         // Initial Talk
-        AddDialog(dialogTexts, "/emote:Happy/Hi, my name is Nathan.", "Nathan");
-        AddDialog(dialogTexts, "/emote:Happy/Hi, my name is Samuel.", "Samuel");
-        AddDialog(dialogTexts, "/emote:Happy/ Hey! Just moved in?", "Nathan");
-        AddDialog(dialogTexts, "/emote:Happy/ Yeah! I got here a couple of days ago. Still trying to settle in.", "Samuel");
+        AddDialog(dialogTexts, "/emote:Happy//color:red//click//sound:laugh/Hi, my name is Nathan.", "Nathan");
+        AddDialog(dialogTexts, "/emote:Happy//color:cyan//click//sound:haha/Hi, my name is Samuel.", "Samuel");
+        AddDialog(dialogTexts, "/emote:Happy//color:red/ Hey! Just moved in?", "Nathan");
+        AddDialog(dialogTexts, "/emote:Happy//color:cyan//click//sound:sigh/ Yeah! I got here a couple of days ago. Still trying to settle in.", "Samuel");
 
         // House introduction
-        AddDialog(dialogTexts, "/emote:Normal/Welcome to the neighborhood! I live next door", "Nathan");
-        AddDialog(dialogTexts, "/emote:Normal/Nice to meet you! I don’t really know my way around here yet.", "Samuel");
-        AddDialog(dialogTexts, "/emote:Normal/Don’t worry, it’s a nice place, and people are really friendly. If you need anything, just let me know.", "Nathan");
-        AddDialog(dialogTexts, "/emote:Happy/Thanks! It already feels like a great place to live.", "Samuel");
+        AddDialog(dialogTexts, "/emote:Normal//color:red/Welcome to the neighborhood! I live next door", "Nathan");
+        AddDialog(dialogTexts, "/emote:Normal//color:cyan//click//sound:thinking/Nice to meet you! I don’t really know my way around here yet.", "Samuel");
+        AddDialog(dialogTexts, "/emote:Normal//color:red//click//sound:laugh/Don’t worry, it’s a nice place, and people are really friendly. If you need anything, just let me know.", "Nathan");
+        AddDialog(dialogTexts, "/emote:Happy//color:cyan//click//sound:haha/Thanks! It already feels like a great place to live.", "Samuel");
 
         // House invitation
-        AddDialog(dialogTexts, "/emote:Happy/I was just about to make some coffee and snacks. Want to join me? I can tell you more about the neighborhood.", "Nathan");
-        AddDialog(dialogTexts, "/emote:Surprise/That sounds great! Maybe you can give me some tips so I don’t get lost.", "Samuel");
+        AddDialog(dialogTexts, "/emote:Happy//color:red//click//sound:thinking/I was just about to make some coffee and snacks. Want to join me? I can tell you more about the neighborhood.", "Nathan");
+        AddDialog(dialogTexts, "/emote:Surprise//color:cyan//click//sound:haha/That sounds great! Maybe you can give me some tips so I don’t get lost.", "Samuel");
 
         // Narrador
         AddDialog(dialogTexts, "/emote:Normal/They both laugh and head into Nathan's house.", "Narrador");
 
         // Transition to second scene
-        var _secondScene = new DialogData("/emote:Normal/Thank you for accepting my invitation to my house!", "Nathan");
+        var _secondScene = new DialogData("/emote:Normal//color:red//click//sound:laugh/Thank you for accepting my invitation to my house!", "Nathan");
         _secondScene.Callback = () => SecondScene();
         dialogTexts.Add(_secondScene);
 

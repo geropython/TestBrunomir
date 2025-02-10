@@ -22,24 +22,28 @@ public class SecondSceneScript : MonoBehaviour
         //Narrador Empieza la historia, comienza afuera de la casa
         dialogTexts.Add(new DialogData("/emote:Normal/Nathan invited Samuel to his house for a snack. Upon entering the door, the atmosphere gave off an air of elegance and warmth.", "Narrador"));
 
-        var goToInside = new DialogData("/emote:Normal/Thank you for accepting my invitation to my house!", "Nathan");
+        var goToInside = new DialogData("/emote:Normal//color:red/Thank you for accepting my invitation to my house!", "Nathan");
         goToInside.Callback = () => ChangeInside();
         dialogTexts.Add(goToInside);
         //Escena Adentro
-        dialogTexts.Add(new DialogData("/emote:Surprise/Your house is beautiful.", "Samuel"));
-        dialogTexts.Add(new DialogData("/emote:Normal/Nathan smiled modestly.", "Narrador"));
+        dialogTexts.Add(new DialogData("/emote:Surprise//color:cyan//click//sound:surprise/Your house is beautiful.", "Samuel"));
+        dialogTexts.Add(new DialogData("/emote:Normal//click//sound:hmm/Nathan smiled modestly.", "Narrador"));
         
-        dialogTexts.Add(new DialogData("/emote:Happy/Thanks Samuel!", "Nathan"));
-        dialogTexts.Add(new DialogData("/emote:Normal/I was living in this house almost all my life. Childhood and adolescence.", "Nathan"));
-        dialogTexts.Add(new DialogData("/emote:Normal/I live with my mother and father.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Happy//color:red//click//sound:hmm/Thanks Samuel!", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Normal//color:red//click//sound:thinking/I was living in this house almost all my life. Childhood and adolescence.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Normal//color:red//click//sound:sigh/I live with my mother and father.", "Nathan"));
         
         //narrador
         dialogTexts.Add(new DialogData("/emote:Normal/Suddenly a noise is heard, it's Samuel's stomach.", "Narrador"));
-        dialogTexts.Add(new DialogData("/emote:Happy/You must be hungry. I imagine you haven't eaten anything since you unpacked your things.", "Nathan"));
-        dialogTexts.Add(new DialogData("/emote:Happy/I'm going to prepare something to accompany the snack, come with me.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Flustered//click//sound:hungry/Ops...", "Samuel"));
+
+        dialogTexts.Add(new DialogData("/emote:Happy//color:red//click//sound:laugh/You must be hungry. I imagine you haven't eaten anything since you unpacked your things.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Happy//color:red//click//sound:thinking/I'm going to prepare something to accompany the snack, come with me.", "Nathan"));
+        dialogTexts.Add(new DialogData("/emote:Sad//color:cyan//click//sound:sigh/Ok, am going.", "Samuel"));
         
         //Cambia la escena a la cocina
-        var goToKitchen = new DialogData("/emote:Happy/I'm going to prepare something to accompany the snack, come with me.", "Nathan");
+        dialogTexts.Add(new DialogData("/emote:Happy//color:red/I'm going to prepare something to accompany the snack, come with me.", "Nathan"));
+        var goToKitchen = new DialogData("/emote:Normal//color:red//click//sound:ring/They moved to the kitchen.", "Narrador");
         goToKitchen.Callback = () => ChangeKitchen();
         dialogTexts.Add(goToKitchen);
         
@@ -65,7 +69,8 @@ public class SecondSceneScript : MonoBehaviour
         question3.SelectList.Add("3", "I didn't find them.");
         question3.Callback = () => CheckAnswer(3);
         dialogTexts.Add(question3);
-        var _thirdScene = new DialogData("/emote:Normal/Thank you for accepting my invitation to my house!", "Nathan");
+        
+        var _thirdScene = new DialogData("/emote:Normal//color:red//click//sound:laugh/Thank you for accepting my invitation to my house!", "Nathan");
         _thirdScene.Callback = () => ThirdScene();
         
         DialogManager.Show(dialogTexts);
@@ -111,31 +116,31 @@ public class SecondSceneScript : MonoBehaviour
     private void ContinueStory()
     {
         var dialogTexts = new List<DialogData>();
-        dialogTexts.Add(new DialogData("/emote:Normal/Based on your decisions in the minigame, Nathan answers...", "Narrador"));
+        dialogTexts.Add(new DialogData("/emote:Normal/Based on your decisions in the minigame, /color:red/Nathan answers...", "Nathan"));
 
         var responses = new Dictionary<string, string>
         {
-            {"111", "/emote:Happy/Well done, even though I live here I don't know where things are XD., Nathan"},
-            {"222", "/emote:Angry/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
-            {"333", "/emote:Sad/Well, you don't even know my house. I couldn't expect anything from you., Nathan"},
-            {"113", "/emote:Normal/Not everything is possible in life. Well anyway, thank you., Nathan"},
-            {"123", "/emote:Sad/And now how do I stir the coffee?, Nathan"},
-            {"132", "/emote:Sad/And now where do I drink my coffee?, Nathan"},
-            {"122", "/emote:Ungry/Disgusting! Couldn't you have grabbed something clean?, Nathan"},
-            {"133", "/emote:Sad/Only sugar is of no use to me to drink coffee., Nathan"},
-            {"131", "/emote:Sad/I need the cup to drink my coffee. What bad luck., Nathan"},
-            {"213", "/emote:Sad/Well, I stir with my finger. Yuck! This is salty., Nathan"},
-            {"223", "/emote:Angry/Well, I stir with my finger. Damn! My cup broke., Nathan"},
-            {"221", "/emote:Surprise/Why did I break my cup with the spoon instantly?, Nathan"},
-            {"231", "/emote:Normal/Without a cup I can't drink my coffee, Damn!, Nathan"},
-            {"233", "/emote:Normal/Almost the worst snack I ever had! Curse!, Nathan"},
-            {"211", "/emote:Normal/But how disgusting! This is salty! I almost vomited., Nathan"},
-            {"321", "/emote:Normal/The cup broke! I couldn't take a sip., Nathan"},
-            {"312", "/emote:Normal/Disgusting! These spoons are dirty!, Nathan"},
-            {"322", "/emote:Normal/Oops the cup broke! What are those lumps on the spoon?, Nathan"},
-            {"311", "/emote:Normal/The coffee is good but it lacks flavor., Nathan"},
-            {"332", "/emote:Normal/Clearly I can't have coffee without anything. Less with the dirty spoon., Nathan"},
-            {"331", "/emote:Normal/Just the spoon is of no use to me. What a waste of time!, Nathan"}
+            {"111", "/emote:Happy//color:red//click//sound:hmm/Well done, even though I live here I don't know where things are XD., Nathan"},
+            {"222", "/emote:Angry//color:red//click//sound:/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
+            {"333", "/emote:Sad//color:red/Well, you don't even know my house. I couldn't expect anything from you., Nathan"},
+            {"113", "/emote:Normal//color:red/Not everything is possible in life. Well anyway, thank you., Nathan"},
+            {"123", "/emote:Sad//color:red/And now how do I stir the coffee?, Nathan"},
+            {"132", "/emote:Sad//color:red/And now where do I drink my coffee?, Nathan"},
+            {"122", "/emote:Angry//color:red/Disgusting! Couldn't you have grabbed something clean?, Nathan"},
+            {"133", "/emote:Sad//color:red/Only sugar is of no use to me to drink coffee., Nathan"},
+            {"131", "/emote:Sad//color:red/I need the cup to drink my coffee. What bad luck., Nathan"},
+            {"213", "/emote:Sad//color:red/Well, I stir with my finger. Yuck! This is salty., Nathan"},
+            {"223", "/emote:Angry//color:red/Well, I stir with my finger. Damn! My cup broke., Nathan"},
+            {"221", "/emote:Surprise//color:red/Why did I break my cup with the spoon instantly?, Nathan"},
+            {"231", "/emote:Normal//color:red/Without a cup I can't drink my coffee, Damn!, Nathan"},
+            {"233", "/emote:Normal//color:red/Almost the worst snack I ever had! Curse!, Nathan"},
+            {"211", "/emote:Normal//color:red/But how disgusting! This is salty! I almost vomited., Nathan"},
+            {"321", "/emote:Normal//color:red/The cup broke! I couldn't take a sip., Nathan"},
+            {"312", "/emote:Normal//color:red/Disgusting! These spoons are dirty!, Nathan"},
+            {"322", "/emote:Normal//color:red/Oops the cup broke! What are those lumps on the spoon?, Nathan"},
+            {"311", "/emote:Normal//color:red/The coffee is good but it lacks flavor., Nathan"},
+            {"332", "/emote:Normal//color:red/Clearly I can't have coffee without anything. Less with the dirty spoon., Nathan"},
+            {"331", "/emote:Normal//color:red/Just the spoon is of no use to me. What a waste of time!, Nathan"}
         };
 
         string key = $"{answer1}{answer2}{answer3}";
