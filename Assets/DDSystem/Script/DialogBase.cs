@@ -42,7 +42,7 @@ namespace Doublsb.Dialog
             }
         }
 
-        public string[] _emotion = new string[] { "Normal" };
+        public string[] _emotion = new string[] { "Normal" ,"Happy", "Surprise", "Angry"};
         public Sprite[] _sprite;
 
         //================================================

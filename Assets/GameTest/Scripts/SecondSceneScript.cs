@@ -15,7 +15,7 @@ public class SecondSceneScript : MonoBehaviour
     {
         answer1 = ""; answer2 = ""; answer3 = "";
     }
-
+    #region Awake
     private void Awake()
     {
         var dialogTexts = new List<DialogData>();
@@ -70,10 +70,12 @@ public class SecondSceneScript : MonoBehaviour
         
         DialogManager.Show(dialogTexts);
     }
+    #endregion
 
     void ChangeInside() { _inSide.SetActive(true); _outSide.SetActive(false); _kitchen.SetActive(false); }
     void ChangeKitchen(){ _kitchen.SetActive(true); _inSide.SetActive(false); _outSide.SetActive(false); }
 
+    #region CheckAnswer
     private void CheckAnswer(int questionNumber)
     {
        string result = DialogManager.Result;
@@ -82,17 +84,17 @@ public class SecondSceneScript : MonoBehaviour
         if (questionNumber == 1)
         {
             answer1 = result;
-            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 1.", "Narrador"));
+            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 1.", "Nathan"));
         }
         else if (questionNumber == 2)
         {
             answer2 = result;
-            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 2.", "Narrador"));
+            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 2.", "Nathan"));
         }
         else if (questionNumber == 3)
         {
             answer3 = result;
-            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 3.", "Narrador"));
+            DialogManager.Show(new DialogData("/emote:Normal/Saved answer 3.", "Nathan"));
         }
 
         if (AllQuestionsAnswered())
@@ -101,9 +103,11 @@ public class SecondSceneScript : MonoBehaviour
             ContinueStory();
         }
     }
+    #endregion
 
     private bool AllQuestionsAnswered() { return !string.IsNullOrEmpty(answer1) && !string.IsNullOrEmpty(answer2) && !string.IsNullOrEmpty(answer3);}
 
+    #region Continue Story
     private void ContinueStory()
     {
         var dialogTexts = new List<DialogData>();
@@ -112,7 +116,7 @@ public class SecondSceneScript : MonoBehaviour
         var responses = new Dictionary<string, string>
         {
             {"111", "/emote:Happy/Well done, even though I live here I don't know where things are XD., Nathan"},
-            {"222", "/emote:Ungry/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
+            {"222", "/emote:Angry/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
             {"333", "/emote:Sad/Well, you don't even know my house. I couldn't expect anything from you., Nathan"},
             {"113", "/emote:Normal/Not everything is possible in life. Well anyway, thank you., Nathan"},
             {"123", "/emote:Sad/And now how do I stir the coffee?, Nathan"},
@@ -121,7 +125,7 @@ public class SecondSceneScript : MonoBehaviour
             {"133", "/emote:Sad/Only sugar is of no use to me to drink coffee., Nathan"},
             {"131", "/emote:Sad/I need the cup to drink my coffee. What bad luck., Nathan"},
             {"213", "/emote:Sad/Well, I stir with my finger. Yuck! This is salty., Nathan"},
-            {"223", "/emote:Ungry/Well, I stir with my finger. Damn! My cup broke., Nathan"},
+            {"223", "/emote:Angry/Well, I stir with my finger. Damn! My cup broke., Nathan"},
             {"221", "/emote:Surprise/Why did I break my cup with the spoon instantly?, Nathan"},
             {"231", "/emote:Normal/Without a cup I can't drink my coffee, Damn!, Nathan"},
             {"233", "/emote:Normal/Almost the worst snack I ever had! Curse!, Nathan"},
@@ -135,7 +139,8 @@ public class SecondSceneScript : MonoBehaviour
         };
 
         string key = $"{answer1}{answer2}{answer3}";
-        
+        Debug.Log("Generated key: " + key);
+
         if (responses.ContainsKey(key))
         {
             string[] response = responses[key].Split(',');
@@ -151,9 +156,7 @@ public class SecondSceneScript : MonoBehaviour
 
         DialogManager.Show(dialogTexts);
     }
+    #endregion
 
-    private void ThirdScene()
-    {
-        SceneManager.LoadScene("ThirdScene");
-    }
+    private void ThirdScene(){ SceneManager.LoadScene("ThirdScene"); }
 }
