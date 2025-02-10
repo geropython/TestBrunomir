@@ -315,12 +315,13 @@ namespace Doublsb.Dialog
 
             state = State.Wait;
         }
-
+        #region Teclas avanzar
         private IEnumerator _waitInput()
         {
-            while (!Input.GetMouseButtonDown(0)) yield return null;
+            while (!Input.GetMouseButtonDown(0) && !Input.anyKeyDown) yield return null;
             _currentDelay = _lastDelay;
         }
+        #endregion
 
         private IEnumerator _print(string Text)
         {
