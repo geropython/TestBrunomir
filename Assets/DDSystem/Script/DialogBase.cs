@@ -1,82 +1,27 @@
-﻿/*
-The MIT License
-
-Copyright (c) 2020 DoublSB
-https://github.com/DoublSB/UnityDialogAsset
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-*/
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
-using System.Linq;
 
 namespace Doublsb.Dialog
 {
-    #region Enum
     public enum State
     {
-        Active,
-        Wait,
-        Deactivate
+        Active, Wait, Deactivate
     }
-
+    #region Command
     public enum Command
     {
-        print,
-        color,
-        emote,
-        size,
-        sound,
-        speed,
-        click,
-        close,
-        wait
+        print, color, emote, size, sound, speed, click, close, wait
     }
+    #endregion
 
+    #region Color
     public enum TextColor
     {
-        aqua,
-        black,
-        blue,
-        brown,
-        cyan,
-        darkblue,
-        fuchsia,
-        green,
-        grey,
-        lightblue,
-        lime,
-        magenta,
-        maroon,
-        navy,
-        olive,
-        orange,
-        purple,
-        red,
-        silver,
-        teal,
-        white,
-        yellow
+        aqua, black, blue, brown, cyan, darkblue, fuchsia, green, grey, lightblue, lime, magenta, maroon, navy, olive, orange, purple, red, silver,
+        teal, white, yellow
     }
     #endregion
 
@@ -119,6 +64,7 @@ namespace Doublsb.Dialog
     /// <summary>
     /// Convert string to Data. Contains List of DialogCommand and DialogFormat.
     /// </summary>
+    #region DialogData
     public class DialogData
     {
         //================================================
@@ -145,7 +91,7 @@ namespace Doublsb.Dialog
             this.Callback = callback;
             this.Character = character;
         }
-
+    #endregion
         //================================================
         //Private Method
         //================================================
@@ -202,6 +148,7 @@ namespace Doublsb.Dialog
     /// <summary>
     /// You can get RichText tagger of size and color.
     /// </summary>
+    #region Dialog Format
     public class DialogFormat
     {
         //================================================
@@ -210,9 +157,7 @@ namespace Doublsb.Dialog
         public string DefaultSize = "60";
         private string _defaultColor = "white";
 
-        private string _color;
-        private string _size;
-
+        private string _color, _size;
 
         //================================================
         //Public Method
@@ -295,7 +240,7 @@ namespace Doublsb.Dialog
                     break;
             }
         }
-
+        #endregion
         //================================================
         //Private Method
         //================================================
@@ -331,7 +276,7 @@ namespace Doublsb.Dialog
             Context = context;
         }
     }
-
+    #region Dialog Select
     public class DialogSelect
     {
         private List<DialogSelectItem> ItemList;
@@ -381,8 +326,7 @@ namespace Doublsb.Dialog
 
     public class DialogSelectItem
     {
-        public string Key;
-        public string Value;
+        public string Key, Value;
 
         public bool isSameKey(string key)
         {
@@ -395,4 +339,5 @@ namespace Doublsb.Dialog
             this.Value = value;
         }
     }
+    #endregion
 }
