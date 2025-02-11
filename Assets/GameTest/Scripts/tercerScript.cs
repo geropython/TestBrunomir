@@ -21,6 +21,8 @@ public class tercerScript : MonoBehaviour
         AddDialog(dialogTexts, "/emote:Sad//color:red/Yes, no problem. My parents should be arriving right now..", "Nathan");
         AddDialog(dialogTexts, "/emote:Nervous//color:cyan/Hi, Oh look at the time. It's too late, my mother is going to worry.I should be leaving.", "Samuel");
         AddDialog(dialogTexts, "/emote:Sad//color:red/Yes, no problem. My parents should be arriving right now..", "Nathan");
+        //Mom
+        AddDialog(dialogTexts, "/emote:Normal//color:pink/Puchaina", "Mom");//TODO: MOM AND DAD
         //Change Background to see the car parking in the garage
         var goOutside = new DialogData("/emote:Normal/Nathan hear the car arrive at the garage.", "Narrador");
         goOutside.Callback = () => ChangeOutside();

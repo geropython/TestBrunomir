@@ -118,29 +118,37 @@ public class SecondSceneScript : MonoBehaviour
         var dialogTexts = new List<DialogData>();
         dialogTexts.Add(new DialogData("/emote:Normal/Based on your decisions in the minigame, /color:red/Nathan answers...", "Nathan"));
 
-        var responses = new Dictionary<string, string>
+        var responses = new Dictionary<string, string>//TODO: COMPLETE TEXTS
         {
             {"111", "/emote:Happy//color:red//click//sound:hmm/Well done, even though I live here I don't know where things are XD., Nathan"},
-            {"222", "/emote:Angry//color:red//click//sound:/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
-            {"333", "/emote:Sad//color:red/Well, you don't even know my house. I couldn't expect anything from you., Nathan"},
+            {"112", "/emote:Happy//color:red//click//sound:hmm/, Nathan"},
             {"113", "/emote:Normal//color:red/Not everything is possible in life. Well anyway, thank you., Nathan"},
-            {"123", "/emote:Sad//color:red/And now how do I stir the coffee?, Nathan"},
-            {"132", "/emote:Sad//color:red/And now where do I drink my coffee?, Nathan"},
+            {"121", "/emote:Happy//color:red//click//sound:hmm/, Nathan"},
             {"122", "/emote:Angry//color:red/Disgusting! Couldn't you have grabbed something clean?, Nathan"},
-            {"133", "/emote:Sad//color:red/Only sugar is of no use to me to drink coffee., Nathan"},
+            {"123", "/emote:Sad//color:red/And now how do I stir the coffee?, Nathan"},
             {"131", "/emote:Sad//color:red/I need the cup to drink my coffee. What bad luck., Nathan"},
-            {"213", "/emote:Sad//color:red/Well, I stir with my finger. Yuck! This is salty., Nathan"},
-            {"223", "/emote:Angry//color:red/Well, I stir with my finger. Damn! My cup broke., Nathan"},
-            {"221", "/emote:Surprise//color:red/Why did I break my cup with the spoon instantly?, Nathan"},
-            {"231", "/emote:Normal//color:red/Without a cup I can't drink my coffee, Damn!, Nathan"},
-            {"233", "/emote:Normal//color:red/Almost the worst snack I ever had! Curse!, Nathan"},
+            {"132", "/emote:Sad//color:red/And now where do I drink my coffee?, Nathan"},
+            {"133", "/emote:Sad//color:red/Only sugar is of no use to me to drink coffee., Nathan"},
+            
             {"211", "/emote:Normal//color:red/But how disgusting! This is salty! I almost vomited., Nathan"},
-            {"321", "/emote:Normal//color:red/The cup broke! I couldn't take a sip., Nathan"},
-            {"312", "/emote:Normal//color:red/Disgusting! These spoons are dirty!, Nathan"},
-            {"322", "/emote:Normal//color:red/Oops the cup broke! What are those lumps on the spoon?, Nathan"},
+            {"212", "/emote:Normal//color:red/., Nathan"},
+            {"213", "/emote:Sad//color:red/Well, I stir with my finger. Yuck! This is salty., Nathan"},
+            {"221", "/emote:Surprise//color:red/Why did I break my cup with the spoon instantly?, Nathan"},
+            {"222", "/emote:Angry//color:red//click//sound:/What the hell? Are you playing a joke on me? Next time I will take revenge!, Nathan"},
+            {"223", "/emote:Angry//color:red/Well, I stir with my finger. Damn! My cup broke., Nathan"},
+            {"231", "/emote:Normal//color:red/Without a cup I can't drink my coffee, Damn!, Nathan"},
+            {"232", "/emote:Normal//color:red/, Nathan"},
+            {"233", "/emote:Normal//color:red/Almost the worst snack I ever had! Curse!, Nathan"},
+            
             {"311", "/emote:Normal//color:red/The coffee is good but it lacks flavor., Nathan"},
+            {"312", "/emote:Normal//color:red/Disgusting! These spoons are dirty!, Nathan"},
+            {"313", "/emote:Normal//color:red/"},
+            {"321", "/emote:Normal//color:red/The cup broke! I couldn't take a sip., Nathan"},
+            {"322", "/emote:Normal//color:red/Oops the cup broke! What are those lumps on the spoon?, Nathan"},
+            {"323", "/emote:Normal//color:red/, Nathan"},
+            {"331", "/emote:Normal//color:red/Just the spoon is of no use to me. What a waste of time!, Nathan"},
             {"332", "/emote:Normal//color:red/Clearly I can't have coffee without anything. Less with the dirty spoon., Nathan"},
-            {"331", "/emote:Normal//color:red/Just the spoon is of no use to me. What a waste of time!, Nathan"}
+            {"333", "/emote:Sad//color:red/Well, you don't even know my house. I couldn't expect anything from you., Nathan"},
         };
 
         string key = $"{answer1}{answer2}{answer3}";
@@ -149,7 +157,7 @@ public class SecondSceneScript : MonoBehaviour
         if (responses.ContainsKey(key))
         {
             string[] response = responses[key].Split(',');
-            dialogTexts.Add(new DialogData(response[0], response[1].Trim()));
+            dialogTexts.Add(new DialogData(response[0], response[1].Trim()));//TODO: FIX
         }
         else
         {
